@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="todo.js" defer></script>
+    <script src="drag.js" defer></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <div class="board">
+        <div id="formOverlay">
+            <div class="form" id="formContainer">
+                <form id="myForm" >
+                <h1 class="form-heading">New Card</h1>
+                <div class="form-item">
+                    <input class="form-input" type="text" placeholder="Please enter the project title!" name="title" id="title">
+                    <input class="form-input" type="text" placeholder="Please enter the subject!" name="subject" >
+                    <input class="form-input form-input-description" type="text" placeholder="Add a description" name="description" >
+                    <div class="form-input-date">
+                        <input class="form-input" type="date" placeholder="Please enter starting date" name="startingDate" >
+                        <input class="form-input" type="date" placeholder="Please enter ending date" name="endingDate" >
+
+                    </div>
+                    <p class="priority-label">Priority</p>
+                    <div class="form-priority">
+                        <button class="priority-btn high-btn">HIGH</button>
+                        <button class="priority-btn medium-btn">MEDIUM</button>
+                        <button class="priority-btn low-btn">LOW</button>
+
+                    </div>
+                    <div class="form-buttons">
+                        <button class="cancel-btn form-button">Cancel</button>
+                        <button class="addCard-btn form-button" type="submit">Add Card</button>
+
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+        <div class="lanes">
+            
+            <div class="lane-heading">
+                <div class="add-btn-heading">
+                    <h3 class="heading">To Do</h3>
+                    <button class="add-btn" id="openFormButton"><ion-icon name="add-outline"></ion-icon></button>
+                </div>
+                <div class="swim-lane" id="todo-lane">
+                    <div class="task" draggable="true">
+                        <p class="task-title">Final Project : App development</p>
+                        <p class="task-description">Business Web Development</p>
+                            <div class="task-items">
+                                <div class="task-date">
+                                <ion-icon name="time-outline" class="task-icon"></ion-icon>
+                                <p class="task-dueDate">March 22, 2022</p>
+                                </div>
+                                <button class="task-priority">HIGH</button>
+                             </div>
+                    </div>
+
+                    <div class="task" draggable="true">
+                        <p class="task-title">Final Project : App development</p>
+                        <p class="task-description">Business Web Development</p>
+                            <div class="task-items">
+                                <div class="task-date">
+                                <ion-icon name="time-outline" class="task-icon"></ion-icon>
+                                <p class="task-dueDate">March 22, 2022</p>
+                                </div>
+                                <button class="task-priority">HIGH</button>
+                             </div>
+                    </div>
+
+                    <div class="task" draggable="true">
+                        <p class="task-title">Final Project : App development</p>
+                        <p class="task-description">Business Web Development</p>
+                            <div class="task-items">
+                                <div class="task-date">
+                                <ion-icon name="time-outline" class="task-icon"></ion-icon>
+                                <p class="task-dueDate">March 22, 2022</p>
+                                </div>
+                                <button class="task-priority">HIGH</button>
+                             </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lane-heading">
+
+                <h3 class="heading">In Progress</h3>
+                <div class="swim-lane">
+
+                </div>
+            </div>
+
+            <div class="lane-heading">
+
+                <h3 class="heading">Completed</h3>
+                <div class="swim-lane">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
